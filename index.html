@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rice Habit: Danger & Solution (y-Diet Guide) | அரிசி பழக்க வழக்கம்: ஆபத்து மற்றும் தீர்வு</title>
-    
+    <title>Rice vs. Millets: The Youth Health Challenge (Tamil & English)</title>
     <style>
-        /* ==================================== */
-        /* 1. Base Styles and Responsive Reset */
-        /* ==================================== */
+        /* Base Styles for Mobile-First Approach */
         body {
-            font-family: 'Arial', 'sans-serif';
+            font-family: 'Arial', 'sans-serif', 'sans-serif';
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
@@ -20,76 +17,47 @@
 
         .container {
             width: 100%;
-            max-width: 650px; /* Slightly wider max-width for better content flow */
+            max-width: 600px; /* Max width for comfortable reading on mobile/tablet */
             margin: 0 auto;
             padding: 15px;
         }
 
-        /* ==================================== */
-        /* 2. Banner Image Styling (Full-Size Mobile Friendly) */
-        /* ==================================== */
+        /* Banner Image Styling (Full-Size Mobile Look) */
         .banner {
             width: 100%;
-            /* 40% padding-top creates a 2.5:1 aspect ratio on mobile (e.g., 500px width = 200px height) */
-            padding-top: 40%; 
-            height: 0; 
+            height: 250px; /* Increased height for better visibility */
             overflow: hidden;
             position: relative;
         }
 
         .banner img {
-            position: absolute; 
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover; /* Ensures the image covers the area nicely */
-            object-position: center; /* Centers the image content */
-        }
-        
-        /* Media query for tablets/desktops to adjust banner height */
-        @media (min-width: 651px) {
-            .banner {
-                padding-top: 30%; /* Slightly taller on desktop, e.g., 3:1 aspect ratio */
-            }
-        }
-        
-        /* ==================================== */
-        /* 3. Language Toggle Button Styling */
-        /* ==================================== */
-        #lang-toggle {
-            display: block;
-            width: 100%;
-            max-width: 300px;
-            margin: 15px auto;
-            padding: 10px;
-            background-color: #3498DB; /* Blue */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-        }
-        
-        #lang-toggle:hover {
-            background-color: #2980B9;
         }
 
-        /* ==================================== */
-        /* 4. Typography, Tables, and Highlights */
-        /* ==================================== */
+        /* Language Separator/Switch */
+        .lang-switch {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #E74C3C;
+            padding: 5px;
+            border: 1px dashed #E74C3C;
+        }
+
+        /* Typography and Headings */
         h1 {
             font-size: 24px;
-            color: #C0392B; 
+            color: #C0392B; /* Deep Red */
             text-align: center;
             margin-top: 10px;
         }
 
         h2 {
             font-size: 20px;
-            color: #2980B9; 
+            color: #2980B9; /* Blue */
             margin-top: 25px;
             border-bottom: 2px solid #ECF0F1;
             padding-bottom: 5px;
@@ -97,15 +65,15 @@
 
         h3 {
             font-size: 18px;
-            color: #27AE60; 
+            color: #27AE60; /* Green */
             margin-top: 15px;
         }
 
-        /* Highlight/Multicolor CSS */
-        .highlight-red { color: #E74C3C; font-weight: bold; } 
-        .highlight-green { color: #27AE60; font-weight: bold; } 
-        .highlight-blue { color: #3498DB; font-weight: bold; } 
-        .highlight-orange { color: #F39C12; font-weight: bold; } 
+        /* Highlight/Multicolor CSS for Keywords */
+        .highlight-red { color: #E74C3C; font-weight: bold; } /* Red for crisis/warning */
+        .highlight-green { color: #27AE60; font-weight: bold; } /* Green for solution/benefit */
+        .highlight-blue { color: #3498DB; font-weight: bold; } /* Blue for tech/intelligence */
+        .highlight-orange { color: #F39C12; font-weight: bold; } /* Orange for key concepts/focus */
         .highlight-bold { font-weight: bold; }
 
         /* Table Styling */
@@ -132,27 +100,21 @@
 
         /* y-Diet Solution Box Styling */
         .ydiet-solution {
-            background-color: #E8F8F5; 
+            background-color: #E8F8F5; /* Light Teal Background */
             border-left: 5px solid #1ABC9C;
             padding: 15px;
             margin: 20px 0;
             border-radius: 5px;
         }
 
-        .ydiet-solution h3 {
-            color: #1ABC9C;
-        }
-
         .ydiet-table th {
-            background-color: #D5F5E3; 
+            background-color: #D5F5E3; /* Lighter Green for Y-Diet Table */
             color: #27AE60;
         }
         
-        /* ==================================== */
-        /* 5. Footer and Logo Styling */
-        /* ==================================== */
+        /* Footer Styling */
         footer {
-            background-color: #34495E; 
+            background-color: #34495E; /* Dark Blue-Gray */
             color: #ECF0F1;
             text-align: center;
             padding: 20px 0;
@@ -160,48 +122,44 @@
             margin-top: 30px;
         }
 
-        footer p {
-            margin: 5px 0;
-        }
-        
-        .logo-container {
+        .footer-logos {
             display: flex;
             justify-content: center;
-            align-items: center;
-            margin: 15px auto 5px; /* Adjust margin for spacing */
-            gap: 10px; 
-            max-width: 300px; /* Optional: limit logo container width */
+            gap: 15px;
+            margin-bottom: 10px;
         }
 
-        .logo-container img {
-            height: 30px; 
-            width: auto; 
+        .footer-logos img {
+            width: 50px; /* Small logo size */
+            height: 50px;
             object-fit: contain;
-            /* Optional: Add a slight border/shadow to make logos stand out */
-            border-radius: 3px;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        footer p {
+            margin: 5px 0;
         }
 
         .disclaimer {
             font-size: 10px;
-            color: #BDC3C7; 
+            color: #BDC3C7; /* Light Gray */
             padding-top: 10px;
             border-top: 1px dashed #4E6883;
             margin-top: 10px;
         }
     </style>
 </head>
-
 <body>
 
     <div class="banner">
-        <img src="banner005.png" alt="Millets and Healthy Food" title="சிறு தானியங்கள் மற்றும் ஆரோக்கியமான உணவு">
+        <img src="banner005.png" alt="Saturated teenager with plate of rice next to millets, symbolizing health crisis.">
     </div>
 
-    <button id="lang-toggle" onclick="toggleLanguage()">Switch to English</button>
-
     <div class="container">
-        
-        <section id="tamil-content">
+
+        <section lang="ta">
             <h1><span class="highlight-red">🍚</span> சோர்வு முதல் சர்க்கரை நோய் வரை: உங்களின் அரிசிப் பழக்கம் தரும் ஆபத்து! (y-Diet வழிகாட்டி)</h1>
             
             <p>
@@ -215,10 +173,7 @@
             </p>
 
             <h2>🔬 பகுதி 1: அரிசி மாறும் கதை (The Story of Rice Transformation)</h2>
-            <p>
-                பாரம்பரியமாக அரிசி தென் இந்திய உணவின் இதயம். ஆனால், இன்றைய தொழில்மயமான சமையல் உலகில், அரிசி அதன் தோற்றத்தையும், குணத்தையும் இழக்கிறது.
-            </p>
-
+            
             <table>
                 <thead>
                     <tr>
@@ -246,10 +201,7 @@
             </p>
 
             <h2>🌟 பகுதி 2: சிறுதானியங்கள் ஏன் நமக்கு முக்கியம்?</h2>
-            <p>
-                நமது பாரம்பரிய <span class="highlight-green">கேழ்வரகு, கம்பு, தினை</span> போன்ற சிறுதானியங்கள், சத்துக்கள் நிரம்பிய ஒரு மாற்று உணவுப் பொக்கிஷம். இவை வெறும் உணவு மட்டுமல்ல, பல ஆரோக்கிய நன்மைகளைத் தருபவை.
-            </p>
-
+            
             <table>
                 <thead>
                     <tr>
@@ -282,17 +234,16 @@
             </table>
             
             <h2>🔍 பகுதி 3: ஏன் நாம் சிறுதானியங்களிலிருந்து விலகினோம்?</h2>
-            <p>சிறு தானியங்கள் இவ்வளவு சிறந்தது என்றாலும், அவை ஏன் நமது உணவிலிருந்து மெல்ல மெல்ல நீங்கின?</p>
+            
             <ul>
-                <li> பொருளாதார ரீதியான எண்ணம்: மலிவான விலையில் அரிசி கிடைத்தபோது, சிறுதானியங்கள் <span class="highlight-orange">குறைவான மதிப்புள்ளவை</span> என்ற எண்ணம் உருவானது.</li>
-                <li> வசதிக்கு முக்கியத்துவம்: அவசர உலகில், சிறுதானியங்களைத் தயாரிப்பதற்கான கூடுதல் நேரம் மற்றும் அதன் சமையல் முறைகள் மக்களுக்குச் <span class="highlight-orange">சௌகரியமாக இல்லை</span>.</li>
-                <li> விழிப்புணர்வு இல்லாமை: கடைகளில் விற்கப்படும் சிறுதானியங்கள் கூட, நுகர்வோரைக் கவர பாலீஷ் செய்யப்படுகின்றன. இதனால், உண்மையான சத்து நிறைந்த சிறுதானியம் எது என்பதைப் பற்றிய <span class="highlight-orange">விழிப்புணர்வு இல்லை</span>.</li>
+                <li><span class="highlight-orange">பொருளாதார ரீதியான எண்ணம்:</span> மலிவான விலையில் அரிசி கிடைத்தபோது, சிறுதானியங்கள் குறைவான மதிப்புள்ளவை என்ற எண்ணம் உருவானது.</li>
+                <li><span class="highlight-orange">வசதிக்கு முக்கியத்துவம்:</span> அவசர உலகில், சிறுதானியங்களைத் தயாரிப்பதற்கான கூடுதல் நேரம் மற்றும் சமையல் முறைகள் மக்களுக்குச் சௌகரியமாக இல்லை.</li>
+                <li><span class="highlight-orange">விழிப்புணர்வு இல்லாமை:</span> கடைகளில் விற்கப்படும் சிறுதானியங்கள் கூட, நுகர்வோரைக் கவர பாலீஷ் செய்யப்படுகின்றன. இதனால், உண்மையான சத்து நிறைந்த சிறுதானியம் எது என்பதைப் பற்றிய விழிப்புணர்வு இல்லை.</li>
             </ul>
 
             <div class="ydiet-solution">
                 <h2>🚀 <span class="highlight-blue">y-Diet:</span> இளைஞர்களுக்கான ஸ்மார்ட் தீர்வு!</h2>
-                <p>இங்குதான் y-Diet போன்ற நவீன <span class="highlight-blue">"உணவு நுண்ணறிவு (Food Intelligence)"</span> நிறுவனங்கள், சிறுதானியங்களை உங்கள் அன்றாட வாழ்க்கைக்குள் மீண்டும் கொண்டு வர உதவுகின்றன. y-Diet-ன் இலக்கு: சிறுதானியங்களை வசதியாகவும், உங்கள் வயதுக்கு ஏற்றதாகவும் மாற்றுவது.</p>
-
+                
                 <table class="ydiet-table">
                     <thead>
                         <tr>
@@ -301,9 +252,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td><span class="highlight-bold">உடனடி சிறுதானிய உணவுகள்</span></td><td>நேரத்தைச் சேமிக்கும். சோர்வு குறையும், முழுமையான ஊட்டச்சத்து கிடைக்கும்.</td></tr>
-                        <tr><td><span class="highlight-bold">தனிப்பயனாக்கப்பட்ட உணவுத் திட்டங்கள்</span></td><td>உங்கள் உடலுக்கு ஏற்ற உணவை (<span class="highlight-orange">Habitome</span>) கண்டறிய உதவும்.</td></tr>
-                        <tr><td><span class="highlight-bold">சமையல் வழிகாட்டி</span></td><td>சிறு தானிய சமையல் பற்றிய தவறான எண்ணங்களை நீக்கும்.</td></tr>
+                        <tr>
+                            <td><span class="highlight-blue">AI ரெசிபி பரிந்துரை</span></td>
+                            <td>உங்கள் உடலுக்கு ஏற்ப, பாரம்பரிய "இட்லி, தோசை" ரெசிப்பியில் அரிசியை 50% குறைத்து, <span class="highlight-green">கேழ்வரகு அல்லது கம்பு</span> சேர்ப்பதற்கான சரியான விகிதங்களை உடனடியாக வழங்கும்.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight-blue">உண்மைச் சரிபார்ப்பு (Scanner)</span></td>
+                            <td>கடையில் ஒரு சிறுதானியப் பாக்கெட்டை வாங்கும் போது, y-Diet ஆப் மூலம் ஸ்கேன் செய்தால், அது <span class="highlight-green">உண்மையாகவே பாலீஷ் செய்யப்படாததா</span> என்பதைத் தெரிந்து கொள்ளலாம்.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight-blue">சத்தான ஸ்நாக்ஸ் & டெலிவரி</span></td>
+                            <td>நீங்கள் காலேஜ் அல்லது ஹாஸ்டலில் இருந்தாலும், <span class="highlight-green">கம்பு லட்டு, தினை கிச்சடி</span> போன்ற ஆரோக்கியமான உணவுகளைப் போட்டி விலையில் உடனடியாக ஆர்டர் செய்ய முடியும்.</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -312,31 +272,30 @@
                 சிறு தானியங்களுக்கு மாறுவது என்பது ஃபேஷன் அல்ல, அது உங்கள் நீண்ட கால ஆரோக்கியத்திற்கான <span class="highlight-green">முக்கியமான மாற்றம்</span>. <span class="highlight-bold">சிறந்த உடல்நலம், சிறந்த வாழ்வு.</span>
             </p>
         </section>
+        
+        <div class="lang-switch">*** ENGLISH VERSION BELOW ***</div>
 
-        <section id="english-content" style="display: none;">
-            <h1><span class="highlight-red">🍚</span> From Fatigue to Diabetes: The Danger of Your Rice Habit! (y-Diet Guide)</h1>
+        <section lang="en">
+            <h1><span class="highlight-red">🍚</span> From Fatigue to Diabetes: The Danger of Your Polished Rice Habit! (y-Diet Guide)</h1>
             
             <p>
-                <span class="highlight-bold">Do you wake up feeling tired? Do you get hungry too quickly?</span>
+                <span class="highlight-bold">Do you wake up tired? Does hunger strike quickly after a meal?</span>
             </p>
             <p>
-                Your daily eating pattern (<span class="highlight-orange">"Habitome"</span>) is now being challenged by a crisis. It is none other than the <span class="highlight-red">processed form</span> of the main food on your plate. The rice we have eaten for generations may now be the cause of health issues like Diabetes and obesity.
+                A silent crisis is affecting your daily food habits (<span class="highlight-orange">"Habitome"</span>). It's the <span class="highlight-red">highly processed form</span> of the main food on your plate. The very rice consumed for generations may now be contributing to rising rates of <span class="highlight-red">Diabetes</span> and obesity.
             </p>
             <p>
-                <span class="highlight-green">The problem is not the rice, but the transformation it undergoes!</span>
+                <span class="highlight-green">The problem is not rice itself; it's the transformation it undergoes!</span>
             </p>
 
             <h2>🔬 Part 1: The Story of Rice Transformation</h2>
-            <p>
-                Traditionally, rice is the heart of South Indian cuisine. However, in today's industrialized culinary world, rice is losing its original form and nutritional qualities.
-            </p>
-
+            
             <table>
                 <thead>
                     <tr>
-                        <th>Part of the Rice</th>
-                        <th>Traditional Rice</th>
-                        <th><span class="highlight-red">Modern White Rice</span></th>
+                        <th>Part of the Grain</th>
+                        <th>Traditional/Unpolished Rice</th>
+                        <th><span class="highlight-red">Modern White Rice (Polished)</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -347,28 +306,28 @@
                     </tr>
                     <tr>
                         <td>Endosperm (Starch)</td>
-                        <td>Enclosed by fiber</td>
-                        <td><span class="highlight-red">Separated and exposed</span></td>
+                        <td>Enclosed by Fiber</td>
+                        <td><span class="highlight-red">Fully Exposed</span></td>
                     </tr>
                 </tbody>
             </table>
 
             <p>
-                <span class="highlight-bold">What happens:</span> Excessive machine processing (<span class="highlight-red">Polishing</span>) removes the protective nutrients in the rice. As a result, what's on our plate becomes a food high in calories and low in fiber, quickly raising blood sugar and leading to health issues early in life.
+                <span class="highlight-bold">What is Happening:</span> Excessive industrial processing (<span class="highlight-red">Polishing</span>) removes essential protective nutrients. This leaves our plate with <span class="highlight-red">high-calorie, low-fiber food</span> that spikes blood sugar, pushing youth towards chronic health issues.
             </p>
 
-            <h2>🌟 Part 2: Why Are Millets Important to Us?</h2>
+            <h2>🌟 Part 2: Why Millets are our Super Heroes</h2>
             <p>
-                Our traditional millets like <span class="highlight-green">Finger Millet (Ragi), Pearl Millet (Kambu), and Foxtail Millet (Thinai)</span> are a nutritional treasure of alternative food. They are not just food, but provide many health benefits.
+                Traditional millets like <span class="highlight-green">Ragi (Finger Millet), Kambu (Pearl Millet), and Thinai (Foxtail Millet)</span> are nutrient powerhouses, offering far greater health benefits than refined rice.
             </p>
 
             <table>
                 <thead>
                     <tr>
                         <th>Feature</th>
-                        <th><span class="highlight-green">Millets</span></th>
-                        <th>White Rice</th>
-                        <th>Your Benefits</th>
+                        <th><span class="highlight-green">Millets (Nutri-Cereals)</span></th>
+                        <th>Polished White Rice</th>
+                        <th>Your Benefit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -376,35 +335,34 @@
                         <td>Glycemic Index (GI)</td>
                         <td>Low</td>
                         <td>High</td>
-                        <td><span class="highlight-green">Long-lasting Energy!</span> Reduced distraction.</td>
+                        <td><span class="highlight-green">Sustained Energy!</span> Better focus for studies.</td>
                     </tr>
                     <tr>
                         <td>Dietary Fiber</td>
-                        <td>3x to 5x higher</td>
+                        <td>3x to 5x Higher</td>
                         <td>Very Low</td>
-                        <td><span class="highlight-green">Weight Management!</span> Reduces hunger.</td>
+                        <td><span class="highlight-green">Weight Control!</span> Fights unnecessary hunger.</td>
                     </tr>
                     <tr>
                         <td>Nutrients</td>
                         <td>High in Iron, Calcium, Protein</td>
                         <td>Low</td>
-                        <td><span class="highlight-green">Immunity!</span> Reduces fatigue.</td>
+                        <td><span class="highlight-green">Immunity Boost!</span> Reduces fatigue (Anemia).</td>
                     </tr>
                 </tbody>
             </table>
             
-            <h2>🔍 Part 3: Why Did We Move Away from Millets?</h2>
-            <p>Even though millets are so superior, why did they slowly disappear from our diet?</p>
+            <h2>🔍 Part 3: Why Did We Stop Eating Millets?</h2>
+            
             <ul>
-                <li> Economic Perception: When rice became available at a cheaper price, millets were perceived as having <span class="highlight-orange">lower value</span>.</li>
-                <li> Emphasis on Convenience: In a fast-paced world, the extra time required and the different cooking methods for millets were not <span class="highlight-orange">convenient</span> for people.</li>
-                <li> Lack of Awareness: Even the millets sold in stores are often polished to attract consumers. Hence, there is a <span class="highlight-orange">lack of awareness</span> about what constitutes truly nutrient-rich millet.</li>
+                <li><span class="highlight-orange">Economic Perception:</span> Subsidized rice made millets appear to be "less valuable" or "poor man's food."</li>
+                <li><span class="highlight-orange">Convenience Trap:</span> Millets require more soaking and cooking time, making fast-cooking white rice the preferred choice for convenience.</li>
+                <li><span class="highlight-orange">Lack of Awareness:</span> Even store-bought millets are often polished to increase appeal, making it hard to identify the truly nutritious, unpolished varieties.</li>
             </ul>
 
             <div class="ydiet-solution">
-                <h2>🚀 <span class="highlight-blue">y-Diet:</span> The Smart Solution for the Youth!</h2>
-                <p>This is where modern <span class="highlight-blue">"Food Intelligence"</span> companies like y-Diet help bring millets back into your daily life. y-Diet's goal: making millets convenient and suitable for your age group.</p>
-
+                <h2>🚀 <span class="highlight-blue">y-Diet:</span> The Smart Solution for Youth!</h2>
+                
                 <table class="ydiet-table">
                     <thead>
                         <tr>
@@ -413,56 +371,47 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td><span class="highlight-bold">Instant Millet Meals</span></td><td>Saves time. Reduces fatigue, provides complete nutrition.</td></tr>
-                        <tr><td><span class="highlight-bold">Personalized Diet Plans</span></td><td>Helps discover the right food (<span class="highlight-orange">Habitome</span>) for your body.</td></tr>
-                        <tr><td><span class="highlight-bold">Cooking Guides</span></td><td>Removes misconceptions about cooking millets.</td></tr>
+                        <tr>
+                            <td><span class="highlight-blue">AI Recipe Integration</span></td>
+                            <td>Based on your health data, it immediately modifies traditional recipes (like "Idli, Dosa") to cut rice by 50% and suggest the right ratio of <span class="highlight-green">Ragi or Kambu</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight-blue">Authenticity Scanner</span></td>
+                            <td>Scan a packet of millet at the store to instantly confirm if it is genuinely <span class="highlight-green">unpolished</span> and check its fiber content, eliminating fake products.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight-blue">Healthy Snacks & Delivery</span></td>
+                            <td>Whether at college or a hostel, you can instantly order convenient, healthy traditional snacks like <span class="highlight-green">Kambu Ladoo or Thinai Khichdi</span> at competitive prices.</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             
             <p style="text-align: center; margin-top: 20px;">
-                Switching to millets is not a fashion trend, it is a <span class="highlight-green">crucial shift</span> for your long-term health. <span class="highlight-bold">Better Health, Better Life.</span>
+                Switching to millets is not a trend; it's a <span class="highlight-green">vital shift</span> for your long-term health. <span class="highlight-bold">Better Health, Better Life.</span>
             </p>
         </section>
 
     </div>
 
     <footer>
-        <p>Y2Z Life Systems (Y-Diet & Habitome Project)</p> 
+        <p>Y2Z Life Systems (Y-Diet & Habitome Project)</p>
         <p>Associate Partner: Temple of Nature (TON, USA)</p>
         
-        <div class="logo-container">
-            <img src="logo1.jpeg" alt="Partner Logo 1">
-            <img src="logo2.jpeg" alt="Partner Logo 2">
-            <img src="logo3.jpeg" alt="Partner Logo 3">
-            <img src="logo4.jpg" alt="Partner Logo 4">
+        <div class="footer-logos">
+            <img src="logo1.jpeg" alt="Logo 1">
+            <img src="logo2.jpeg" alt="Logo 2">
+            <img src="logo3.jpeg" alt="Logo 3">
+            <img src="logo4.jpg" alt="Logo 4">
         </div>
+
         <div class="disclaimer">
             <p>டிஸ்கிளைமர் (Disclaimer): இங்கு பகிரப்படுபவை பொதுக் கல்விக்கான வழிகாட்டுதல்கள் மட்டுமே. உங்கள் உடல்நிலைக்கு ஏற்ற உணவு முறை மற்றும் பழக்கவழக்கங்களை அறிய, விரைவில் வெளிவரும் Y2Z-ன் 'Personalized Lifestyle and Diet Pattern' திட்டத்தைப் பயன்படுத்தலாம்।</p>
-            <p>Disclaimer: The information shared here is for general educational guidance only. To know the diet and habits suitable for your body, you can use Y2Z's upcoming 'Personalized Lifestyle and Diet Pattern' program.</p>
-            <p>© 2025 Y2Z Life Systems</p>
+            <p>&copy; 2025 Y2Z Life Systems</p>
         </div>
+        
+        <p style="margin-top: 15px;">**Next Step:**</p>
+        <p>Would you like me to generate a **7-Day Traditional Healthy Diet Plan** in the y-Diet style to address Iron (Anemia) and Vitamin D deficiencies?</p>
     </footer>
-
-    <script>
-        function toggleLanguage() {
-            const tamilContent = document.getElementById('tamil-content');
-            const englishContent = document.getElementById('english-content');
-            const toggleButton = document.getElementById('lang-toggle');
-
-            if (tamilContent.style.display !== 'none') {
-                // Switch to English
-                tamilContent.style.display = 'none';
-                englishContent.style.display = 'block';
-                toggleButton.textContent = 'தமிழ் பதிப்பிற்கு மாறவும்';
-            } else {
-                // Switch to Tamil
-                tamilContent.style.display = 'block';
-                englishContent.style.display = 'none';
-                toggleButton.textContent = 'Switch to English';
-            }
-        }
-    </script>
-
 </body>
 </html>
